@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Товары
+{% endblock title %}
+
+{% block content %}
+<div class = "list_product">
+    {% for prod in prod_list %} 
+        <div class = "product">
+            <div class = "image_product product_content">
+                {% if prod.image %}
+                    <a href="{{prod.get_absolute_url}}"><img src="{{prod.image.url}}">
+                    </a>
+                {% endif %}
+            </div>
+            <h2 class = "product_content"><a href="{{prod.get_absolute_url}}">{{prod.title}}</a></h2>
+            <p class = "product_content">Цена: {{prod.price}}</p>
+            <p class = "product_content">{{prod.description}}</p>
+        </div>
+    {% endfor %}
+</div>
+    Что то 3 но в файле prod
+{% endblock content %}
+<!-- text_overflow (сократить описание) -->

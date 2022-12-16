@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}
+    {{product.title}}
+{% endblock title %}
+{% block content %} 
+    <h1>{{product.title}}</h1>
+    <div class = "product">
+            <div class = "image_product product_content">
+                {% if product.image %}
+                    <img src="{{product.image.url}}">
+                {% endif %}
+            </div>
+    </div>
+    <h2>Информация</h2>
+    <h2>Описание</h2>
+    <h2>Комментарии</h2>
+{% endblock content %}
